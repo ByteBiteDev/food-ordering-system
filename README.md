@@ -1,6 +1,6 @@
 # Food Ordering System (PHP + MySQL)
 
-A simple, modular food ordering web application built with vanilla **PHP** and **MySQL**. It provides a customer-facing storefront (browse menu, cart, checkout) and an admin dashboard (manage foods, categories, orders, customers).
+A modular food ordering web application built with vanilla **PHP** and **MySQL**. It includes a customer storefront (menu, cart, checkout) and an admin dashboard (manage foods, categories, orders, customers).
 
 ## Core Features
 
@@ -56,4 +56,4 @@ Add/update screenshots here:
 - `docs/screenshots/cart.png`
 - `docs/screenshots/product.png`
 
-Once you add them, you can embed them in this README using standard Markdown image syntax.
+Then embed them in this README using Markdown images.
