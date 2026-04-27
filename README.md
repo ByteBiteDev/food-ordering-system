@@ -56,4 +56,3 @@ Add/update screenshots here:
 - `docs/screenshots/cart.png`
 - `docs/screenshots/product.png`
 
-Then embed them in this README using Markdown images.
