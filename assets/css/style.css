@@ -1269,6 +1269,16 @@ html[data-theme="dark"] .theme-toggle i {
   box-shadow: 0 0 0 6px rgba(76, 175, 80, 0.12);
 }
 
+.form-input.error {
+  border-color: var(--error);
+  box-shadow: 0 0 0 6px rgba(231, 76, 60, 0.12);
+}
+
+.form-input.error:focus {
+  border-color: var(--error);
+  box-shadow: 0 0 0 6px rgba(231, 76, 60, 0.12);
+}
+
 .form-input.has-value {
   border-color: rgba(47, 62, 52, 0.18);
 }
