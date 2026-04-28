@@ -1,4 +1,5 @@
 -- Food Ordering System schema (MySQL)
+-- Uses InnoDB + utf8mb4 for proper emoji/unicode support.
 
 CREATE TABLE IF NOT EXISTS users (
   user_id INT UNSIGNED NOT NULL AUTO_INCREMENT,
