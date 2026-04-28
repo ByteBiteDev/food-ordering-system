@@ -1,10 +1,13 @@
 <?php
+declare(strict_types=1);
+
 require_once __DIR__ . '/backend/includes/init.php';
 
 $pdo = db();
 
 // Helper to get category ID by name, or create if it doesn't exist
-function getCategoryId($pdo, $name) {
+function getCategoryId(PDO $pdo, string $name): int
+{
     $stmt = $pdo->prepare('SELECT category_id FROM categories WHERE name = ?');
     $stmt->execute([$name]);
     $cat = $stmt->fetch();
