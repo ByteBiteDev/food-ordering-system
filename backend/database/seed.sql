@@ -1,4 +1,5 @@
 -- Seed data (optional)
+-- Safe to run multiple times (uses ON DUPLICATE / SELECT form).
 
 INSERT INTO categories (name, status) VALUES
 ('Burgers', 1),
@@ -27,4 +28,3 @@ INSERT INTO foods (category_id, name, price, description, image, status)
 SELECT c.category_id, 'Chocolate Brownie', 250.00, 'Rich chocolate brownie with a soft center.', '', 1
 FROM categories c WHERE c.name='Desserts'
 ON DUPLICATE KEY UPDATE price=VALUES(price), description=VALUES(description), status=VALUES(status);
-
