@@ -25,5 +25,17 @@ document.addEventListener('DOMContentLoaded', () => {
       }
     });
   });
+
+  // Add loading states for buttons
+  document.querySelectorAll('.btn').forEach(button => {
+    button.addEventListener('click', function() {
+      if (!this.classList.contains('disabled')) {
+        this.classList.add('loading');
+        setTimeout(() => {
+          this.classList.remove('loading');
+        }, 1000);
+      }
+    });
+  });
 });
 
