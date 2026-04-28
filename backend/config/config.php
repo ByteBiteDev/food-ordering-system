@@ -2,6 +2,7 @@
 declare(strict_types=1);
 
 // Database config (override with environment variables if needed)
+// Tip: set DB_* variables in your web server / hosting environment.
 define('DB_HOST', getenv('DB_HOST') ?: '127.0.0.1');
 define('DB_PORT', getenv('DB_PORT') ?: '3306');
 define('DB_NAME', getenv('DB_NAME') ?: 'food_ordering');
