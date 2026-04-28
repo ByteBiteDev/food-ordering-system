@@ -98,6 +98,7 @@ require __DIR__ . '/backend/includes/layout_top.php';
   <h1 style="margin:6px 0 10px;">Project Setup</h1>
   <div class="muted">
     This runs the database schema and creates the first admin account. After success, setup is locked.
+    Please change the admin password after your first login.
   </div>
 
   <?php if ($success): ?>
