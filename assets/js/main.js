@@ -169,4 +169,27 @@ document.addEventListener('DOMContentLoaded', () => {
             if (window.innerWidth > 1024) setMenuSidebarOpen(false);
         });
     }
+
+    // 5. Form validation enhancements
+    const forms = document.querySelectorAll('form');
+    forms.forEach(form => {
+        form.addEventListener('submit', (e) => {
+            const requiredFields = form.querySelectorAll('[required]');
+            let isValid = true;
+            
+            requiredFields.forEach(field => {
+                if (!field.value.trim()) {
+                    field.classList.add('error');
+                    isValid = false;
+                } else {
+                    field.classList.remove('error');
+                }
+            });
+            
+            if (!isValid) {
+                e.preventDefault();
+                showToast('Please fill in all required fields.', 'error');
+            }
+        });
+    });
 });
