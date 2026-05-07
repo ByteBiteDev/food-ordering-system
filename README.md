@@ -45,30 +45,123 @@ The application uses a normalized database schema with the following tables:
 
 ```
 food-ordering-system/
-├── backend/                 # Server-side logic and shared components
-│   ├── admin/              # Admin dashboard pages and layouts
-│   ├── config/             # Application and database configuration
-│   ├── database/           # SQL schema and seed data files
-│   ├── endpoints/          # AJAX endpoints for dynamic features
-│   ├── includes/           # Shared helper functions and utilities
+├── Root Entry Points        # Public-facing PHP files (clean URLs)
+│   ├── index.php           # → frontend/pages/index.php
+│   ├── login.php           # → frontend/pages/login.php
+│   ├── register.php        # → frontend/pages/register.php
+│   ├── food.php            # → frontend/pages/food.php
+│   ├── food_details.php    # → frontend/pages/food_details.php
+│   ├── cart.php            # → frontend/pages/cart.php
+│   ├── checkout.php        # → frontend/pages/checkout.php
+│   ├── order.php           # → frontend/pages/order.php
+│   ├── orders.php          # → frontend/pages/orders.php
+│   ├── payment.php         # → frontend/pages/payment.php
+│   ├── payment_success.php # → frontend/pages/payment_success.php
+│   ├── profile.php         # → frontend/pages/profile.php
+│   ├── about.php           # → frontend/pages/about.php
+│   ├── contact.php         # → frontend/pages/contact.php
+│   ├── logout.php          # → frontend/pages/logout.php
+│   ├── ajax_favorite.php   # → backend/endpoints/ajax_favorite.php
+│   ├── ajax_payment.php    # → backend/endpoints/ajax_payment.php
+│   ├── setup.php           # Database setup script
+│   └── seed_20_foods.php   # Seed data script
+│
+├── backend/                # Server-side logic and utilities
+│   ├── admin/              # Admin dashboard implementations
+│   │   ├── categories.php
+│   │   ├── customers.php
+│   │   ├── foods.php
+│   │   ├── food_edit.php
+│   │   ├── orders.php
+│   │   ├── order_edit.php
+│   │   ├── reports.php
+│   │   ├── settings.php
+│   │   └── includes/       # Admin-specific includes
+│   ├── config/             # Configuration files
+│   │   ├── config.php      # Database and app config
+│   │   └── db.php          # Database connection
+│   ├── database/           # SQL files
+│   │   ├── schema.sql      # Database schema
+│   │   ├── seed.sql        # Seed data
+│   │   ├── admin_schema.sql
+│   │   └── user_schema.sql
+│   ├── endpoints/          # AJAX endpoints
+│   │   ├── ajax_favorite.php
+│   │   └── ajax_payment.php
+│   ├── includes/           # Shared utilities
 │   │   ├── auth.php        # Authentication functions
-│   │   ├── cart.php        # Cart management functions
-│   │   ├── csrf.php        # CSRF protection utilities
-│   │   ├── flash.php       # Flash message handling
-│   │   ├── functions.php   # Common utility functions
-│   │   ├── init.php        # Application initialization
-│   │   └── layout_*.php    # Layout templates
-│   └── bootstrap.php       # Backend bootstrap file
-├── frontend/               # Customer-facing UI components
-│   ├── pages/              # Main customer pages
-│   └── profile/            # Profile management pages
-├── assets/                 # Static assets (CSS, JS, images)
-├── uploads/                # User-uploaded content (food images)
-├── admin/                  # Admin entry point
-├── profile/                # Profile entry point
-├── *.php                   # Root-level entry stubs for clean URLs
-├── setup.php               # Database setup and initialization
-└── seed_20_foods.php       # Script to populate sample food data
+│   │   ├── cart.php        # Cart management
+│   │   ├── csrf.php        # CSRF protection
+│   │   ├── flash.php       # Flash messages
+│   │   ├── functions.php   # Helper functions
+│   │   ├── init.php        # Application init
+│   │   ├── layout_top.php  # Layout header
+│   │   └── layout_bottom.php # Layout footer
+│   ├── scratch/            # Development utilities
+│   └── bootstrap.php       # Backend bootstrap
+│
+├── frontend/               # Customer-facing UI
+│   ├── pages/              # Customer page implementations
+│   │   ├── index.php
+│   │   ├── login.php
+│   │   ├── register.php
+│   │   ├── food.php
+│   │   ├── food_details.php
+│   │   ├── cart.php
+│   │   ├── checkout.php
+│   │   ├── order.php
+│   │   ├── orders.php
+│   │   ├── payment.php
+│   │   ├── payment_success.php
+│   │   ├── profile.php
+│   │   ├── about.php
+│   │   ├── contact.php
+│   │   └── logout.php
+│   ├── profile/            # Profile management
+│   │   ├── index.php
+│   │   ├── edit.php
+│   │   ├── addresses.php
+│   │   ├── favorites.php
+│   │   ├── orders.php
+│   │   ├── order_view.php
+│   │   ├── notifications.php
+│   │   ├── security.php
+│   │   └── includes/       # Profile-specific includes
+│   └── bootstrap.php       # Frontend bootstrap
+│
+├── assets/                 # Static assets
+│   ├── css/                # Stylesheets
+│   │   └── style.css
+│   ├── js/                 # JavaScript files
+│   │   ├── app.js
+│   │   └── main.js
+│   ├── img/                # Images
+│   │   ├── placeholder.svg
+│   │   ├── food-placeholder.svg
+│   │   ├── hero-pattern.svg
+│   │   ├── chapa-logo.svg
+│   │   ├── telebirr-logo.png
+│   │   └── telebirr-logo.svg
+│   ├── admin/              # Admin assets
+│   │   ├── css/
+│   │   │   └── admin.css
+│   │   └── js/
+│   │       └── admin.js
+│   └── profile/            # Profile assets
+│       ├── css/
+│       │   └── profile.css
+│       └── js/
+│           └── profile.js
+│
+├── uploads/                # User-uploaded files
+│   └── foods/              # Food images
+│       ├── .gitkeep
+│       ├── .htaccess
+│       └── [uploaded images]
+│
+├── docs/                   # Documentation
+├── .gitignore              # Git ignore rules
+└── README.md               # This file
 ```
 
 ## Installation & Setup
